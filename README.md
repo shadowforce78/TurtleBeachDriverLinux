@@ -102,18 +102,3 @@ controller.disconnect()
 | Product ID | `0x7018` |
 | Type | Xbox Controller (XInput) |
 | Intensité max | 100 (pas 255!) |
-
-
-
-<!-- Test linux -->
-# 1. Installer hidapi
-pip install hidapi
-
-# 2. Permissions
-sudo cp udev/99-turtlebeach.rules /etc/udev/rules.d/
-sudo udevadm control --reload-rules
-sudo udevadm trigger
-# Débrancher/rebrancher la manette
-
-# 3. Tester
-python vibration.py --demo
