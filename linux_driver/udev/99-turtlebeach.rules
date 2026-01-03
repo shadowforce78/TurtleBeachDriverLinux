@@ -1,0 +1,16 @@
+# Règles udev pour la manette Turtle Beach Xbox Controller
+# Permet l'accès sans sudo sur Linux
+#
+# Installation:
+#   sudo cp 99-turtlebeach.rules /etc/udev/rules.d/
+#   sudo udevadm control --reload-rules
+#   sudo udevadm trigger
+#
+# Puis débranchez et rebranchez la manette
+
+# Turtle Beach Controller (VID:10F5 PID:7018)
+SUBSYSTEM=="usb", ATTR{idVendor}=="10f5", ATTR{idProduct}=="7018", MODE="0666", TAG+="uaccess"
+SUBSYSTEM=="hidraw", ATTRS{idVendor}=="10f5", ATTRS{idProduct}=="7018", MODE="0666", TAG+="uaccess"
+
+# Règle alternative si la première ne fonctionne pas
+KERNEL=="hidraw*", ATTRS{idVendor}=="10f5", ATTRS{idProduct}=="7018", MODE="0666", GROUP="plugdev"

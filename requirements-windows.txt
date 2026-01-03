@@ -1,0 +1,8 @@
+# Dépendances Python pour Windows (analyse)
+scapy>=2.5.0
+pywinusb>=0.4.2
+hidapi>=0.14.0
+
+# Pour tester XInput sur Windows
+# xinput-python n'est pas sur PyPI, installez manuellement:
+# pip install git+https://github.com/Zuzu-Typ/XInput-Python.git
